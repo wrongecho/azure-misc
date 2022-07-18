@@ -1,0 +1,34 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Allowed virtual machine scale set count",
+  "policyDefinitionId": "/subscriptions/580498ad-d257-47f6-8408-5ffdc09e5e73/providers/Microsoft.Authorization/policyDefinitions/3cd428de-b073-4e90-a730-6167b7f817a4",
+  "scope": "/subscriptions/580498ad-d257-47f6-8408-5ffdc09e5e73",
+  "notScopes": [],
+  "parameters": {
+   "listOfAllowedCapacities": {
+    "value": [
+     "0",
+     "1",
+     "2"
+    ]
+   }
+  },
+  "description": "",
+  "metadata": {
+   "assignedBy": "Marcus Hill",
+   "parameterScopes": {},
+   "createdBy": "7078ecd0-c337-4b19-b79d-5b7392e87a38",
+   "createdOn": "2022-07-18T23:35:18.1353175Z",
+   "updatedBy": "7078ecd0-c337-4b19-b79d-5b7392e87a38",
+   "updatedOn": "2022-07-18T23:38:26.3605496Z"
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/580498ad-d257-47f6-8408-5ffdc09e5e73/providers/Microsoft.Authorization/policyAssignments/bc13d6433c404125b0bc944c",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "bc13d6433c404125b0bc944c"
+}

@@ -1,0 +1,46 @@
+{
+ "properties": {
+  "displayName": "Allowed virtual machine scale set count",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "Specify number of allowed VMSS.",
+  "metadata": {
+   "category": "Compute",
+   "createdBy": "7078ecd0-c337-4b19-b79d-5b7392e87a38",
+   "createdOn": "2022-07-18T23:34:29.5938056Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "listOfAllowedCapacities": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed VMSS Capacities",
+     "description": "The number of VMSS VMs."
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Compute/virtualMachineScaleSets"
+     },
+     {
+      "not": {
+       "field": "Microsoft.Compute/virtualMachineScaleSets/sku.capacity",
+       "in": "[parameters('listOfAllowedCapacities')]"
+      }
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/580498ad-d257-47f6-8408-5ffdc09e5e73/providers/Microsoft.Authorization/policyDefinitions/3cd428de-b073-4e90-a730-6167b7f817a4",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "3cd428de-b073-4e90-a730-6167b7f817a4"
+}
